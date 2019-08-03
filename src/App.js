@@ -10,41 +10,59 @@ function App() {
   // Then, in this function, we update the selectedValue state to the value of the clicked item
   // Updated state here causes react to re-render the page based on the new state
   const onSelectedValueChange = value => {
+    // Why is this function defined differently than other function? See "Arrow Functions" in the readMe
     setSelectedValue(value);
   };
 
+  function getScreenContentForSelectedValue() {
+    if (selectedValue === "Happy") {
+      return <h1>That's good.</h1>;
+    } else if (selectedValue === "Sad") {
+      return <p>oof.</p>;
+    } else if (selectedValue === "Tired") {
+      return <h1>zzzzzz</h1>;
+    } else if (selectedValue === "Mysterious") {
+      return <h1>???</h1>;
+    }
+  }
+
   return (
-    <div className="flexCenter">
+    <div className="flexCenter flexColumn">
       {/* SelectorSet is a custom component I created. Here we pass in properties that tell 
       this instance of the component how to display and function */}
-      <SelectorSet
-        label="I feel..."
-        gradient
-        options={[
-          {
-            label: "Happy",
-            value: "Happy",
-            style: { backgroundColor: "hsla(206, 37%, 45%, 1)" }
-          },
-          {
-            label: "Sad",
-            value: "Sad",
-            style: { backgroundColor: "hsla(197, 44%, 59%, 1)" }
-          },
-          {
-            label: "Tired",
-            value: "Tired",
-            style: { backgroundColor: "hsla(155, 38%, 60%, 1)" }
-          },
-          {
-            label: "Mysterious",
-            value: "Mysterious",
-            style: { backgroundColor: "hsla(12, 100%, 66%, 1)" }
-          }
-        ]}
-        currentValue={selectedValue}
-        onValueChange={onSelectedValueChange}
-      />
+      <div>
+        <SelectorSet
+          label="I feel..."
+          gradient
+          options={[
+            {
+              label: "Happy",
+              value: "Happy",
+              style: { backgroundColor: "hsla(206, 37%, 45%, 1)" }
+            },
+            {
+              label: "Sad",
+              value: "Sad",
+              style: { backgroundColor: "hsla(197, 44%, 59%, 1)" }
+            },
+            {
+              label: "Tired",
+              value: "Tired",
+              style: { backgroundColor: "hsla(155, 38%, 60%, 1)" }
+            },
+            {
+              label: "Mysterious",
+              value: "Mysterious",
+              style: { backgroundColor: "hsla(12, 100%, 66%, 1)" }
+            }
+          ]}
+          currentValue={selectedValue}
+          onValueChange={onSelectedValueChange}
+        />
+      </div>
+      <div className="flexGrow-1 flexCenter">
+        {getScreenContentForSelectedValue()}
+      </div>
     </div>
   );
 }

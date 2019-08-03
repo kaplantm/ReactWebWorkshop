@@ -11,6 +11,8 @@ E.g. hsla(197, 44%, 59%, 1)  ->  hsla(197, 44%, 70%, 1)
 
 For more info on HSLA https://www.w3schools.com/cssref/func_hsla.asp*/
 
+/* In modern CSS, there are so many flex boxes. Here is a great resource https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
 
 /***** Elements *****/
@@ -30,6 +32,9 @@ body {
 .bg-dark {
   background-color: hsla(197, 24%, 18%, 1);
 }
+.bg-dark-grey {
+  background-color: hsla(197, 18%, 40%, 1);
+}
 .bg-medium-dark {
   background-color: hsla(206, 37%, 45%, 1);
 }
@@ -42,19 +47,25 @@ body {
 .bg-light {
   background-color: hsla(155, 38%, 100%, 1);
 }
+.flexGrow-1 {
+  flex-grow: 1;
+}
 .flexCenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.flexColumn {
+  flex-direction: column;
+}
 /* .roundedCorners {
   border-radius: 20px;
   padding: 1em;
 } */
-/* .fullsize {
+.fullsize {
   min-height: 100vh;
   min-width: 100%;
-} */
+}
 /***** Specific Classes *****/
 
 /* SelectorSet styles */
@@ -97,6 +108,10 @@ body {
 
 .selectorSetOptionsContainer > div.selectorSetOptionsActive {
   border-color: white;
+}
+
+#root {
+  align-items: stretch;
 }
 
 /***** Media Queries (Adjusting layout based on windows size via breakpoints *****/
