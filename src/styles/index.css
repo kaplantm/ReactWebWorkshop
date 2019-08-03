@@ -1,0 +1,107 @@
+/* 
+I like to use this resource to generate color schemes https://coolors.co/b3b3f1-dcb6d5-b1ede8-cf8ba9-b15e6c
+I like to use this resource for finding colors and converting code codes to HSLA http://hslpicker.com/#72c09f 
+
+I prefer HSLA color codes (e.g. hsla(197, 44%, 59%, 1)) instead of HEX color codes (#68aac4)
+because I find them easier to understand and adjust, plus they can easily have an opacity/transparency.
+
+They are in the format HUE, SATURATION, LUMINOSITY, ALPHA (opacity)
+For example, if I have a blue and just want a slightly lighter blue, I can just change the Luminosity value.
+E.g. hsla(197, 44%, 59%, 1)  ->  hsla(197, 44%, 70%, 1)
+
+For more info on HSLA https://www.w3schools.com/cssref/func_hsla.asp*/
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+/***** Elements *****/
+body,
+div {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 2em;
+}
+/* Generics Classes */
+.bg-dark {
+  background-color: hsla(197, 24%, 18%, 1);
+}
+.bg-medium-dark {
+  background-color: hsla(206, 37%, 45%, 1);
+}
+.bg-medium {
+  background-color: hsla(197, 44%, 59%, 1);
+}
+.bg-medium-light {
+  background-color: hsla(155, 38%, 60%, 1);
+}
+.bg-light {
+  background-color: hsla(155, 38%, 100%, 1);
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .roundedCorners {
+  border-radius: 20px;
+  padding: 1em;
+} */
+/* .fullsize {
+  min-height: 100vh;
+  min-width: 100%;
+} */
+/***** Specific Classes *****/
+
+/* SelectorSet styles */
+.selectorSetContainer {
+  text-align: left;
+  margin: 1em;
+  flex-direction: column;
+  display: inline-flex;
+  align-items: left;
+}
+
+.selectorSetLabelContainer {
+  font-size: 1.5em;
+  margin-bottom: 0.25em;
+}
+
+.selectorSetOptionsContainer {
+  flex-wrap: wrap;
+  background-color: hsla(155, 38%, 100%, 0.1);
+  border: 1px solid hsla(155, 38%, 100%, 0.1);
+  text-align: center;
+  display: inline-flex;
+}
+
+.selectorSetOptionsContainer > div {
+  padding: 0.5em;
+  margin: 0.25em;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 75px;
+  min-height: 75px;
+  border: 3px solid transparent;
+}
+
+.selectorSetOptionsContainer > div:hover {
+  border-bottom: 3px solid hsl(210, 100%, 100%, 0.8);
+}
+
+.selectorSetOptionsContainer > div.selectorSetOptionsActive {
+  border-color: white;
+}
+
+/***** Media Queries (Adjusting layout based on windows size via breakpoints *****/
+@media screen and (max-width: 800px) {
+  .selectorSetOptionsContainer {
+    flex-direction: column;
+  }
+}
