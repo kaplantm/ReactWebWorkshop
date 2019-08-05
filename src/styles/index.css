@@ -28,6 +28,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2em;
 }
+img {
+  max-width: 500px;
+}
 /* Generics Classes */
 .bg-dark {
   background-color: hsla(197, 24%, 18%, 1);
@@ -47,6 +50,10 @@ body {
 .bg-light {
   background-color: hsla(155, 38%, 100%, 1);
 }
+.outline-light-thick-transparent {
+  outline: 10px solid hsla(155, 38%, 100%, 0.1);
+  outline-offset: 10px;
+}
 .flexGrow-1 {
   flex-grow: 1;
 }
@@ -55,17 +62,46 @@ body {
   justify-content: center;
   align-items: center;
 }
+.flexStart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 .flexColumn {
   flex-direction: column;
 }
-/* .roundedCorners {
-  border-radius: 20px;
-  padding: 1em;
-} */
 .fullsize {
   min-height: 100vh;
   min-width: 100%;
 }
+.margin-1 {
+  margin: 1em;
+}
+.padded-point5 {
+  padding: 0.5em;
+}
+.fontSize-small {
+  font-size: 0.5em;
+}
+.textCenter {
+  text-align: center;
+}
+.animated-rotate-forever {
+  animation: rotation 2s infinite linear;
+  -webkit-animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+  }
+}
+
 /***** Specific Classes *****/
 
 /* SelectorSet styles */
@@ -76,12 +112,10 @@ body {
   display: inline-flex;
   align-items: left;
 }
-
 .selectorSetLabelContainer {
   font-size: 1.5em;
   margin-bottom: 0.25em;
 }
-
 .selectorSetOptionsContainer {
   flex-wrap: wrap;
   background-color: hsla(155, 38%, 100%, 0.1);
@@ -89,7 +123,6 @@ body {
   text-align: center;
   display: inline-flex;
 }
-
 .selectorSetOptionsContainer > div {
   padding: 0.5em;
   margin: 0.25em;
@@ -101,19 +134,15 @@ body {
   min-height: 75px;
   border: 3px solid transparent;
 }
-
 .selectorSetOptionsContainer > div:hover {
   border-bottom: 3px solid hsl(210, 100%, 100%, 0.8);
 }
-
 .selectorSetOptionsContainer > div.selectorSetOptionsActive {
   border-color: white;
 }
-
 #root {
   align-items: stretch;
 }
-
 /***** Media Queries (Adjusting layout based on windows size via breakpoints *****/
 @media screen and (max-width: 800px) {
   .selectorSetOptionsContainer {

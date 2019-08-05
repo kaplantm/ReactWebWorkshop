@@ -11,9 +11,7 @@ function SelectorSet(props) {
       // Here, we are checking if the current item is equal to the selected value.
       // If so, we add a CSS class to show the item is selected (the class adds a white border)
       const optionClassName =
-        currentValue === value || (!currentValue && !index)
-          ? "selectorSetOptionsActive"
-          : "";
+        currentValue === value ? "selectorSetOptionsActive" : "";
 
       return (
         <div
