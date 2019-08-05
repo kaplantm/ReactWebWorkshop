@@ -3,7 +3,7 @@
 - Install [VSCode](https://code.visualstudio.com/) a free code editor.
 - Install the "Live Server" extension in VSCode (go the extensions in the left sidebar and search Live Server)
 - Open the project folder is VSCode
-- Click "Go Live" in the status bar at the bottom of VSCode. This should start the server and launch this project in the browser.
+- Click "Go Live" in the status bar at the bottom of VSCode. This should start the server and launch this project in the browser then select the index file you want to view.
 
 Each index file demonstrates new and slightly more complex topics.
 

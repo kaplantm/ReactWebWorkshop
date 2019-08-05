@@ -23,19 +23,19 @@ function App1() {
         {/* Here we are using a custom component that makes it easy to add a label to an image. 
           It also adds a nicely spaced border. */}
         <ImageContainer
-          src="assets/dog1.gif"
+          src="src/assets/dog1.gif"
           label="This is Koda."
           hiddenLabel="click me"
           isHiddenByDefault={true}
         />
         <ImageContainer
-          src="assets/dog2.gif"
+          src="src/assets/dog2.gif"
           label="He isn't my dog."
           hiddenLabel="click me too"
           isHiddenByDefault={true}
         />
         <ImageContainer
-          src="assets/dog3.gif"
+          src="src/assets/dog3.gif"
           label="(Unfortunately)"
           hiddenLabel="and me"
           isHiddenByDefault={true}

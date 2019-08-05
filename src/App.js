@@ -19,9 +19,9 @@ function App() {
         <div className="flexStart">
           {/* Here we are using a custom component that makes it easy to add a label to an image. 
           It also adds a nicely spaced border. */}
-          <ImageContainer src="assets/dog1.gif" label="This is Koda." />
-          <ImageContainer src="assets/dog2.gif" label="He isn't my dog." />
-          <ImageContainer src="assets/dog3.gif" label="(Unfortunately)" />
+          <ImageContainer src="src/assets/dog1.gif" label="This is Koda." />
+          <ImageContainer src="src/assets/dog2.gif" label="He isn't my dog." />
+          <ImageContainer src="src/assets/dog3.gif" label="(Unfortunately)" />
         </div>
       );
     } else if (selectedValue === "Sad") {
@@ -32,18 +32,18 @@ function App() {
         <div className="flexCenter flexColumn">
           {/* Using the HTML image tag - since we don't need a border or label */}
           <img
-            src="assets/shrimpNagiri.svg"
+            src="src/assets/shrimpNagiri.svg"
             width="200"
-            class="animated-rotate-forever"
+            className="animated-rotate-forever"
           />
           {/* embedding a youtube video */}
           <iframe
             width="560"
             height="315"
             src="https://www.youtube.com/embed/CP1LnBij7gU?mute=1&autoplay=true&controls=0"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           />
           <p>
             This was one of the first games I ever programmed in Javascript!
@@ -55,13 +55,13 @@ function App() {
         // this sound file is from https://freesound.org/people/TheZero/sounds/390534/
         // it is published under a Creative Commons CC0 license that allows to commercial and non-commercial use in the public domain
         // for more info about creative commons copyright https://en.wikipedia.org/wiki/Creative_Commons_license#Seven_regularly_used_licenses
-        <div flexCenter flexColumn>
+        <div>
           {/* Using the HTML audio tag */}
-          <audio autoPlay src="assets/creepySound.wav">
+          <audio autoPlay src="src/assets/creepySound.wav">
             Your browser does not support the
             <code>audio</code> element.
           </audio>
-          <ImageContainer src="assets/frog.jpeg" />
+          <ImageContainer src="src/assets/frog.jpeg" />
         </div>
       );
     }
