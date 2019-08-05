@@ -6,11 +6,10 @@ function ImageContainer(props) {
     className,
     style,
     imageLabel,
-    hiddenLabel,
-    isHiddenByDefault
+    hiddenLabel
   } = props;
 
-  const [isHidden, setIsHidden] = React.useState(isHiddenByDefault);
+  const [isHidden, setIsHidden] = React.useState(true);
 
   // This is the function that will be called when a item in the selectorSet is chosen
   // It received the value of the selected item as a paramter called value
@@ -21,17 +20,10 @@ function ImageContainer(props) {
   };
 
   if (isHidden) {
-    return (
-      <div
-        className={"outline-light-thick-transparent margin-1"}
-        onMouseUp={onClick}
-      >
-        {hiddenLabel || "Click here!"}
-      </div>
-    );
+    return <div className={"flexColumn"}>{hiddenLabel}</div>;
   } else {
     return (
-      <div className={"flexColumn"} onMouseUp={onClick}>
+      <div className={"flexColumn"}>
         <img
           src={src}
           width={width}
@@ -40,9 +32,7 @@ function ImageContainer(props) {
           style={style}
         />
         {/* display a paragraph tag containing the label if there is a label passed into this component */}
-        {imageLabel && (
-          <p className="fontSize-small textCenter">{imageLabel}</p>
-        )}
+        {label && <p className="fontSize-small textCenter">{label}</p>}
       </div>
     );
   }

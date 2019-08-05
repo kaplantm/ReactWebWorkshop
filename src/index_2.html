@@ -1,0 +1,78 @@
+<!-- index.js is the default entry point for website. -->
+
+<!-- hey web browser! I'm gonna use HTML -->
+<!DOCTYPE html>
+
+<!-- HTML uses "tags" to describe a page. This <html> line is the "html tag" which tells the browser you are starting using HTML -->
+<html>
+  <!-- The head of a webpage does some configuration, setup and loading of the 
+    webpage's dependencies (external files) before the page is display -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- The title is the label that appears in the top of the browser and on the tab -->
+    <title>Hello World</title>
+
+    <!-- Import our styles -->
+    <link rel="stylesheet" type="text/css" href="./styles/index.css" />
+  </head>
+
+  <!-- The body tag contains the main part of the webpage content. -->
+  <body class="bg-dark">
+    <!-- divs are just dividers - they help us contain things so we can organize, position and style sections of content -->
+    <div class="fullsize flexCenter flexColumn textCenter">
+      <div class="width-80 bg-medium-dark roundedCorners">
+        <!-- paragraph -->
+        <p>
+          Hello!
+        </p>
+      </div>
+      <div class="width-80 bg-dark-grey roundedCorners margin-1">
+        <p>
+          This page demonstrates one way Javascript can be used to an
+          interactivity.<br />
+        </p>
+        <!-- when this button is clicked, it will run myFunction from our javascript -->
+        <button type="button" onclick="myFunction()">
+          Click me to display a link to this project's Github repository.
+        </button>
+        <p id="demo"></p>
+      </div>
+      <div class="width-80 bg-dark-grey roundedCorners">
+        <p>
+          <a href="https://www.w3schools.com/html/">
+            <!-- img tags display images
+            Here we use is "alt" attribute. This sets the text that will be read by screen readers (important for accessibilty).
+            This text is also display if the image fails to load. -->
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3e/W3Schools_logo.png"
+              width="200"
+              alt="W3Schools.com"
+              class="bg-light"
+          /></a>
+          is another great place to learn about HTML.
+        </p>
+      </div>
+    </div>
+    <!-- This script tag contains our Javascript -->
+    <script>
+      // Functions are a way to group code to run a particular set of actions
+      function myFunction() {
+        // find the div we are going to add our link to
+        const demoContainer = document.getElementById("demo");
+        // make our link
+        var link = document.createElement("A");
+        // make the text that goes inside our link
+        var linkText = document.createTextNode("Our GitHub!");
+        // put the text inside the link
+        link.appendChild(linkText);
+        // set where our link goes
+        link.setAttribute(
+          "href",
+          "https://github.com/kaplantm/ReactWebWorkshop"
+        );
+        // add our link to the div we found earlier
+        demoContainer.appendChild(link);
+      }
+    </script>
+  </body>
+</html>

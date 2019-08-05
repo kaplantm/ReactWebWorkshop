@@ -10,7 +10,6 @@ function App() {
   // Then, in this function, we update the selectedValue state to the value of the clicked item
   // Updated state here causes react to re-render the page based on the new state
   const onSelectedValueChange = value => {
-    // Why is this function defined differently than other function? See "Arrow Functions" in the readMe
     setSelectedValue(value);
   };
 

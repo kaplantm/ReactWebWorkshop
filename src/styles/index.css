@@ -28,6 +28,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2em;
 }
+a {
+  color: hsla(155, 38%, 60%, 1);
+}
+button {
+  font-size: 1em;
+}
 img {
   max-width: 500px;
 }
@@ -36,7 +42,7 @@ img {
   background-color: hsla(197, 24%, 18%, 1);
 }
 .bg-dark-grey {
-  background-color: hsla(197, 18%, 40%, 1);
+  background-color: hsla(197, 18%, 30%, 1);
 }
 .bg-medium-dark {
   background-color: hsla(206, 37%, 45%, 1);
@@ -70,9 +76,18 @@ img {
 .flexColumn {
   flex-direction: column;
 }
+.alignCenter {
+  align-items: center;
+}
 .fullsize {
   min-height: 100vh;
   min-width: 100%;
+}
+.width-80 {
+  width: 80%;
+}
+.roundedCorners {
+  border-radius: 20px;
 }
 .margin-1 {
   margin: 1em;
@@ -85,6 +100,9 @@ img {
 }
 .textCenter {
   text-align: center;
+}
+.hidden {
+  visibility: hidden;
 }
 .animated-rotate-forever {
   animation: rotation 2s infinite linear;
