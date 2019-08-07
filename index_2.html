@@ -20,26 +20,21 @@
   <body class="bg-dark">
     <!-- divs are just dividers - they help us contain things so we can organize, position and style sections of content -->
     <div class="fullsize flexCenter flexColumn textCenter">
-      <div class="width-80 bg-medium-dark roundedCorners">
-        <!-- paragraph -->
-        <p>
-          Hello!
-        </p>
-      </div>
       <div class="width-80 bg-dark-grey roundedCorners margin-1">
         <p>
-          This page demonstrates one way Javascript can be used to an
+          This page demonstrates one way Javascript can be used to add
           interactivity.<br />
         </p>
         <!-- when this button is clicked, it will run myFunction from our javascript -->
-        <button type="button" onclick="myFunction()">
+        <button
+          type="button"
+          onclick="addLink('Our GitHub!', 'https://github.com/kaplantm/ReactWebWorkshop')"
+        >
           Click me to display a link to this project's Github repository.
         </button>
         <p id="demo"></p>
-      </div>
-      <div class="width-80 bg-dark-grey roundedCorners">
         <p>
-          <a href="https://www.w3schools.com/html/">
+          <a href="https://www.w3schools.com/js/">
             <!-- img tags display images
             Here we use is "alt" attribute. This sets the text that will be read by screen readers (important for accessibilty).
             This text is also display if the image fails to load. -->
@@ -49,27 +44,30 @@
               alt="W3Schools.com"
               class="bg-light"
           /></a>
-          is another great place to learn about HTML.
+          is another great place to learn about Javascript.
+        </p>
+        <p>
+          <a href="index_1.html"> Click here to go to index 1!</a><br />
+          <a href="index_3.html"> Click here to go to index 3!</a>
         </p>
       </div>
     </div>
     <!-- This script tag contains our Javascript -->
     <script>
       // Functions are a way to group code to run a particular set of actions
-      function myFunction() {
+      // here we accepting labelText as url parameters - parameters help make functions more reuseable
+      // now this same function could be used to add links with any label to any page
+      function addLink(labelText, url) {
         // find the div we are going to add our link to
         const demoContainer = document.getElementById("demo");
         // make our link
         var link = document.createElement("A");
         // make the text that goes inside our link
-        var linkText = document.createTextNode("Our GitHub!");
+        var linkText = document.createTextNode(labelText);
         // put the text inside the link
         link.appendChild(linkText);
         // set where our link goes
-        link.setAttribute(
-          "href",
-          "https://github.com/kaplantm/ReactWebWorkshop"
-        );
+        link.setAttribute("href", url);
         // add our link to the div we found earlier
         demoContainer.appendChild(link);
       }

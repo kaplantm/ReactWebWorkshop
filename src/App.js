@@ -69,6 +69,9 @@ function App() {
 
   return (
     <div className="flexCenter flexColumn">
+      <p>
+        <a href="index_3.html">Click here to go to index 3</a>
+      </p>
       {/* SelectorSet is a custom component I created. Here we pass in properties that tell 
       this instance of the component how to display and function */}
       <div>

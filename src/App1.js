@@ -18,6 +18,11 @@ function App1() {
           bit more like HTML) to modify the displayed HTML! That makes things
           easier too!
         </p>
+        <p>
+          <a href="index_2.html"> Click here to go to index 2!</a>
+          <br />
+          <a href="index_4.html"> Click here to go to index 4!</a>
+        </p>
       </div>
       <div className="flexStart">
         {/* Here we are using a custom component that makes it easy to add a label to an image. 
